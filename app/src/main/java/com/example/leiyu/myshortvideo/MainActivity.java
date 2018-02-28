@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.leiyu.myshortvideo.Permission.PermissionChecker;
+import com.example.leiyu.myshortvideo.cameracapture.CameraCaptureActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,7 +24,9 @@ public class MainActivity extends AppCompatActivity {
         if (!isPermissionOK) {
             Toast.makeText(this, "Some permissions is not approved !!!", Toast.LENGTH_SHORT).show();
         } else {
-            Intent intent = new Intent(this, LiveCameraActivity.class);
+//            Intent intent = new Intent(this, LiveCameraActivity.class);
+//            startActivity(intent);
+            Intent intent = new Intent(this, CameraCaptureActivity.class);
             startActivity(intent);
         }
     }
