@@ -144,11 +144,9 @@ public class CameraCaptureActivity extends Activity implements SurfaceTexture.On
         }
         if(result == 0) {
             CameraHolder.State state = CameraHolder.instance().getState();
-            //CameraHolder.instance().setSurfaceTexture(mSurfaceTexture);
             if (state != CameraHolder.State.PREVIEW) {
                 try {
                     CameraHolder.instance().openCamera();
-                    //CameraHolder.instance().startPreview();
                 } catch (CameraHardwareException e) {
                     result = CameraListener.CAMERA_OPEN_FAILED;
                     e.printStackTrace();
