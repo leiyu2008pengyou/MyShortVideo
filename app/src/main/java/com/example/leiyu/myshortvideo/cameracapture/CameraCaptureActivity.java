@@ -2,7 +2,6 @@ package com.example.leiyu.myshortvideo.cameracapture;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Camera;
 import android.graphics.SurfaceTexture;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
@@ -21,12 +20,9 @@ import com.example.leiyu.myshortvideo.camera.exception.CameraDisabledException;
 import com.example.leiyu.myshortvideo.camera.exception.CameraHardwareException;
 import com.example.leiyu.myshortvideo.camera.exception.CameraNotSupportException;
 import com.example.leiyu.myshortvideo.camera.exception.NoCameraException;
+import com.example.leiyu.myshortvideo.utils.FileUtil;
 
 import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
 
 /**
  * Created by leiyu on 2018/2/28.
@@ -37,7 +33,6 @@ public class CameraCaptureActivity extends Activity implements SurfaceTexture.On
     private static final String TAG = "CameraCaptureActivity";
     private GLSurfaceView mGLView;
     private CameraSurfaceRenderer mRenderer;
-    //private Camera mCamera;
     private CameraHandler mCameraHandler;
     private boolean mRecordingEnabled;
     private int mCameraPreviewWidth, mCameraPreviewHeight;
@@ -50,7 +45,7 @@ public class CameraCaptureActivity extends Activity implements SurfaceTexture.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera_capture);
 
-        File outputFile = createMediaFile(this, "myshortvideo", "camera-test.mp4");
+        File outputFile = FileUtil.createMediaFile(this, FileUtil.filePath, FileUtil.fileName);
 
         TextView fileText = (TextView) findViewById(R.id.cameraOutputFile_text);
         fileText.setText(outputFile.toString());
@@ -185,18 +180,4 @@ public class CameraCaptureActivity extends Activity implements SurfaceTexture.On
     public void onFrameAvailable(SurfaceTexture surfaceTexture) {
         mGLView.requestRender();
     }
-
-    private static File createMediaFile(Context context, String parentPath, String fileName) {
-        String state = Environment.getExternalStorageState();
-        File rootDir = state.equals(Environment.MEDIA_MOUNTED) ? Environment.getExternalStorageDirectory() : context.getCacheDir();
-
-        File folderDir = new File(rootDir.getAbsolutePath() + File.separator + parentPath);
-        if (!folderDir.exists() && folderDir.mkdirs()) {
-
-        }
-        File tmpFile = new File(folderDir, fileName);
-
-        return tmpFile;
-    }
-
 }
