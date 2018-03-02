@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyShortVideo</string>
+    <string name="lf_message_max_num">你最多可以只能选择%1$d张图片</string>
 </resources>

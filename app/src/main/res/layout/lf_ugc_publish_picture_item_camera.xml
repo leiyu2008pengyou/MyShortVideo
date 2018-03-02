@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.leiyu.myshortvideo.videogride.layout.SquareRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffc805"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/camera"
+        android:layout_width="22dp"
+        android:layout_height="19dp"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/lf_multi_sel_pic_camera" />
+
+    <TextView
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/camera"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="拍摄"
+        android:textColor="#000000"
+        android:textSize="13dp" />
+</com.example.leiyu.myshortvideo.videogride.layout.SquareRelativeLayout>
+
+
+

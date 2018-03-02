@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.leiyu.myshortvideo.videogride.layout.SquareRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/picture"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/check"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/lf_ugc_publish_checkbox_selector"
+        android:gravity="center"/>
+
+    <View
+        android:id="@+id/id_video_bg"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/lf_ugc_publish_bg_gradient"/>
+
+    <ImageView
+        android:id="@+id/lf_ugc_publish_video_rl_icon"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="6dp"
+        android:layout_marginLeft="6dp"
+        android:src="@mipmap/lf_ugc_publish_video_duration"/>
+
+    <TextView
+        android:id="@+id/tv_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/lf_ugc_publish_video_rl_icon"
+        android:layout_alignTop="@+id/lf_ugc_publish_video_rl_icon"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/lf_ugc_publish_video_rl_icon"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:text="12:12"
+        android:textColor="#ffffff"
+        android:textSize="15dp"/>
+
+</com.example.leiyu.myshortvideo.videogride.layout.SquareRelativeLayout>

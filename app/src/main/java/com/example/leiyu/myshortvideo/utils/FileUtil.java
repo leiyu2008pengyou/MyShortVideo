@@ -12,7 +12,10 @@ import java.io.File;
 public class FileUtil {
     public static final String filePath = "myshortvideo";
     public static final String fileName = "camera-test.mp4";
+    public static final String IMAGE_PATH = File.separator + filePath + File.separator + "image" + File.separator;
+    public static final String VIDEODIR = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + filePath + File.separator;
     public static final String videoPath = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + filePath + File.separator + fileName;
+    public static final String JPG_SUFFIX = ".jpg";
 
     public static File createMediaFile(Context context, String parentPath, String fileName) {
         String state = Environment.getExternalStorageState();
